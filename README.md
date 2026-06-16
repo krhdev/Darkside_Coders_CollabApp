@@ -43,4 +43,13 @@ A beautiful, fully-featured weather dashboard built with vanilla HTML, CSS, and 
 - Dynamic backgrounds
 - Loading skeletons
 
-Perfect for practicing modern web development skills and team collaboration workflows.
+**Project Structure (create these folders/files):**
+```
+weather-dashboard/
+├── index.htm
+├── assets/
+│   └── style.css
+      └── script.js.css
+└── README.md
+```
+
