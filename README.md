@@ -11,11 +11,15 @@ Darkside Coders consists of Jenny, Cherry, Callum & Kat!
 
 ### Purpose 
 
+To figure out what to wear based on the weather where you will be. 
+
 ### Features 
 
 ### Chosen API's: 
  
-
+Chat GPT API 
+OpenWeatherMap API — https://openweathermap.org/api
+Create a “Today’s Forecast” dashboard showing temperature, conditions, and icons for different cities.
 
 #### Application requirements
 
@@ -43,4 +47,4 @@ Implement search filters or pagination.
 Include animations or transitions for polished interactivity.
 Add a loading state or error message for better UX.
 
-## You can find our app here: 
+## You can find our app here: https://krhdev.github.io/Darkside_Coders_CollabApp/ 
