@@ -15,6 +15,8 @@ To figure out what to wear based on the weather where you will be.
 
 ### Features 
 
+Amazing logo created by jetsetter Jennie 
+
 ### Chosen API's: 
  
 Chat GPT API 
