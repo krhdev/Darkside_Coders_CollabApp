@@ -49,7 +49,7 @@ weather-dashboard/
 ├── index.htm
 ├── assets/
 │   └── style.css
-      └── script.js.css
+    └── script.js.css
 └── README.md
 ```
 
