@@ -15,7 +15,7 @@ To figure out what to wear based on the weather where you will be.
 
 ### Features 
 
-Amazing logo created by jetsetter Jennie 
+Amazing logo created by Jetsetter Jennie 
 
 ### Chosen API's: 
  
