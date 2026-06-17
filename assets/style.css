@@ -18,7 +18,11 @@ body {
     margin: 0;
     min-height: 100vh;
     padding: 28px;
-    background-color: #ffd86b;
+    background-color: var(--cream);
+}
+
+img {
+    max-height: 400px;
 }
 
 section {
