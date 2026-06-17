@@ -19,9 +19,9 @@ Amazing logo created by Jetsetter Jennie
 
 ### Chosen API's: 
  
-Chat GPT API 
-OpenWeatherMap API — https://openweathermap.org/api
-Create a “Today’s Forecast” dashboard showing temperature, conditions, and icons for different cities.
+- Chat GPT API - https://openai.com/api/ 
+- OpenWeatherMap API — https://openweathermap.org/api
+--  Create a “Today’s Forecast” dashboard showing temperature, conditions, and icons for different cities.
 
 #### Application requirements
 
