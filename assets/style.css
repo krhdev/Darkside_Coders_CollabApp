@@ -13,6 +13,17 @@
   --radius: 28px;
   --font: 'Chewy', sans-serif;
   --font-size: 16px;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 28px;
+    background-color: #ffd86b;
+}
+
+section {
+    padding: 100px
+}
 
 .btn {
   border: 3px solid var(--ink);
@@ -28,8 +39,31 @@
   color: white;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 28px;
+.logo-title{
+    display:flex;
+    justify-content:center;
+}
+
+.logo-slogan {
+    display:flex;
+    justify-content:center;
+}
+
+.search-row {
+    display:flex;
+    justify-content:center;
+}
+.output{
+    display:flex;
+    justify-content:center;
+}
+
+.btn-c {
+    background: var(--teal);
+    color: white;
+}
+
+.btn-f {
+    background: var(--teal);
+    color: white;
 }
