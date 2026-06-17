@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Wear</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-     <header>
+    <header>
         <h1>Weather Wear</h1>
-        <button class="unit-btn active" data-unit="metric"="true">°C</button>
-      <button class="unit-btn" data-unit="imperial"="false">°F</button>
+        <div class="header-controls">
+            <button class="unit-btn active" id="unitMetricBtn" data-unit="metric">°C</button>
+            <button class="unit-btn" id="unitImperialBtn" data-unit="imperial">°F</button>
+            <button id="themeToggle" class="btn-theme" title="Toggle dark mode">🌙</button>
+        </div>
     </header>
 
-    <section>
-        <p> What shall I wear today?1</p>
+    <section class="tagline">
+        <p>What shall I wear today?</p>
     </section>
 
-    
     <div class="search-row">
       <input
-        id="searchInput"
+        id="cityInput"
         type="text"
         placeholder="City name (e.g. London, Tokyo, New York)"
         maxlength="60"
@@ -29,11 +31,93 @@
       <button class="btn btn-geo" id="geoBtn" title="Use my location">⌖</button>
       <button class="btn btn-primary" id="searchBtn">Search</button>
     </div>
-    
-  
 
+    <div id="historyPills" class="history-pills"></div>
 
+    <div id="statusMessage" class="status-message"></div>
+
+    <!-- Skelet0nn -->
+    <div id="skeleton" class="skeleton hidden">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-sub"></div>
+        <div class="skeleton-grid">
+            <div class="skeleton-box"></div>
+            <div class="skeleton-box"></div>
+            <div class="skeleton-box"></div>
+            <div class="skeleton-box"></div>
+        </div>
+    </div>
+
+    <!-- Main weather C0ntent -->
+    <div id="weatherContent" class="weather-content hidden">
+        <div class="current-card">
+            <div class="current-top">
+                <div class="current-location">
+                    <h2 id="cityName">City, Country</h2>
+                    <p id="localDate">Wednesday, Jun 17</p>
+                </div>
+                <div class="current-temp">
+                    <img id="weatherIcon" src="" alt="weather icon">
+                    <span id="temperature">--°</span>
+                </div>
+            </div>
+
+            <div class="description" id="description">Clear sky</div>
+            <div class="feels-like" id="feelsLike">Feels like --°</div>
+            <div class="min-max" id="minMax">--° / --°</div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-label">Humidity</div>
+                    <div class="stat-value" id="humidity">--%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Wind</div>
+                    <div class="stat-value" id="wind">--</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Pressure</div>
+                    <div class="stat-value" id="pressure">-- hPa</div>
+                </div>
+            </div>
+
+            <div class="meter-row">
+                <div class="meter">
+                    <div class="meter-label">Cloud Cover <span id="cloudCover">--%</span></div>
+                    <div class="meter-track">
+                        <div id="cloudFill" class="meter-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="meter">
+                    <div class="meter-label">UV Index <span id="uvIndex">--</span></div>
+                    <div class="meter-track">
+                        <div id="uvBar" class="meter-dot" style="left: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid" style="margin-top: 24px;">
+                <div class="stat-box">
+                    <div class="stat-label">Sunrise</div>
+                    <div class="stat-value" id="sunrise">--</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Sunset</div>
+                    <div class="stat-value" id="sunset">--</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Local Time</div>
+                    <div class="stat-value" id="localTime">--</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <h3 style="text-align:center; margin-bottom:12px; font-family:var(--font);">5-Day Forecast</h3>
+            <div id="forecastStrip" class="forecast-strip"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
-
-<script src="./assets/js/script.js"></script>
 </html>
