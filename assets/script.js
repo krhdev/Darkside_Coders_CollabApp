@@ -1,20 +1,56 @@
-const API_KEY = "YOUR_OPENWEATHER_KEY";
+const WEATHER_API_BASE_URL = 'https://api.openweathermap.org';
+const WEATHER_API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
+const MAX_DAILY_FORECAST = 5;
 
-function getOutfit(weather, temp) {
+function getRecommendations(weather, temp) {
+
+    let outfit = "";
+    let dontForget = [];
 
     if (temp < 5) {
-        return "Heavy coat, gloves, scarf and boots.";
+        outfit = "Heavy coat, gloves, scarf and boots.";
+        dontForget.push("🧤 Gloves");
+        dontForget.push("🧣 Scarf");
+    }
+    else if (temp < 12) {
+        outfit = "Jacket, jeans and trainers.";
+    }
+    else if (temp < 20) {
+        outfit = "Light jumper and trousers.";
+    }
+    else {
+        outfit = "T-shirt, shorts and sunglasses.";
+        dontForget.push("🕶️ Sunglasses");
+        dontForget.push("🧴 Sun Cream");
     }
 
-    if (temp < 12) {
-        return "Jacket, jeans and trainers.";
+    const weatherCondition = weather.toLowerCase();
+
+    if (
+        weatherCondition.includes("rain") ||
+        weatherCondition.includes("drizzle") ||
+        weatherCondition.includes("shower")
+    ) {
+        dontForget.push("☂️ Umbrella");
     }
 
-    if (temp < 20) {
-        return "Light jumper and trousers.";
+    if (
+        weatherCondition.includes("snow")
+    ) {
+        dontForget.push("🥾 Winter Boots");
+        dontForget.push("🧤 Gloves");
     }
 
-    return "T-shirt, shorts and sunglasses.";
+    if (
+        weatherCondition.includes("wind")
+    ) {
+        dontForget.push("🧥 Windproof Jacket");
+    }
+
+    return {
+        outfit,
+        dontForget
+    };
 }
 
 async function getWeather(city) {
@@ -43,21 +79,40 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
 
         const weatherData = await getWeather(city);
 
-        const outfit = getOutfit(
+        const recommendation = getRecommendations(
             weatherData.weather[0].main,
             weatherData.main.temp
         );
 
         document.getElementById("results").innerHTML = `
-            <h2>${city}</h2>
-            <p>Temperature: ${weatherData.main.temp}°C</p>
-            <p><strong>Recommended outfit:</strong> ${outfit}</p>
+            <h2>${weatherData.name}</h2>
+
+            <p><strong>Weather:</strong> ${weatherData.weather[0].description}</p>
+
+            <p><strong>Temperature:</strong> ${Math.round(weatherData.main.temp)}°C</p>
+
+            <h3>What to Wear</h3>
+            <p>${recommendation.outfit}</p>
+
+            <h3>Don't Forget</h3>
+            <ul>
+                ${
+                    recommendation.dontForget.length
+                        ? recommendation.dontForget
+                              .map(item => `<li>${item}</li>`)
+                              .join("")
+                        : "<li>Nothing special needed today.</li>"
+                }
+            </ul>
         `;
 
     } catch (error) {
+
         console.error(error);
-        document.getElementById("results").innerHTML =
-            `<p>${error.message}</p>`;
+
+        document.getElementById("results").innerHTML = `
+            <p>Error: ${error.message}</p>
+        `;
     }
 
 });

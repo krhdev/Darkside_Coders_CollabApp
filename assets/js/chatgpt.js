@@ -1,11 +1,6 @@
 // outfit-recommender.js
 console.log("chatgpt.js loaded");
 
-document.getElementById("searchBtn").addEventListener("click", () => {
-    console.log("Search clicked");
-    alert("Button works!");
-});
-
 const WEATHER_API_BASE_URL = 'https://api.openweathermap.org';
 const WEATHER_API_KEY = "f23ee9deb4e1a7450f3157c44ed020e1";
 const OPENAI_API_KEY = "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";
