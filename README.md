@@ -1,7 +1,7 @@
 # Group Project: Interactive Web Application using a 3rd Party API
 
 ## Challenge
-This is our first group project and an opportunity to use the skills you've learned over the last five weeks from Step8Up Training.
+This is our first group project and an opportunity to use the skills we've learned over the last five weeks from Step8Up Training.
 In this project, we worked in teams of three to wireframe, design, plan, and develop an interactive Web application using HTML, CSS, and JavaScript that utilises one or more 3rd Party APIs.
 
 ### Meet the team
