@@ -85,25 +85,13 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
         );
 
         document.getElementById("results").innerHTML = `
-            <h2>${weatherData.name}</h2>
+            <h2>${city}</h2>
+            <p>Temperature: ${weatherData.main.temp}°C</p>
+            <p><strong>Recommended outfit:</strong> ${outfit}</p>
+        `;
 
-            <p><strong>Weather:</strong> ${weatherData.weather[0].description}</p>
-
-            <p><strong>Temperature:</strong> ${Math.round(weatherData.main.temp)}°C</p>
-
-            <h3>What to Wear</h3>
-            <p>${recommendation.outfit}</p>
-
-            <h3>Don't Forget</h3>
-            <ul>
-                ${
-                    recommendation.dontForget.length
-                        ? recommendation.dontForget
-                              .map(item => `<li>${item}</li>`)
-                              .join("")
-                        : "<li>Nothing special needed today.</li>"
-                }
-            </ul>
+        document.getElementById("resulttemp").innerHTML = `
+            <p>Temperature: ${weatherData.main.temp}°C</p>
         `;
 
     } catch (error) {
