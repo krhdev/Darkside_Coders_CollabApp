@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Indie+Flower&family=Nunito:wght@400;700;800;900&display=swap');
+
+:root {
+  --ink: #16224a;
+  --teal: #67c7bd;
+  --yellow: #ffd86b;
+  --pink: #f8b7c8;
+  --lavender: #b9b8f3;
+  --cream: #fff7e8;
+  --card: #ffffff;
+  --soft: #f4f1ff;
+  --shadow: 0 18px 40px rgba(22, 34, 74, 0.15);
+  --radius: 28px;
+  --font: 'Chewy', sans-serif;
+  --font-size: 16px;
+
+.btn {
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 5px 0 var(--ink);
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px;
+}
