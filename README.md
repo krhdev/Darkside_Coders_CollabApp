@@ -51,9 +51,17 @@ Be deployed on GitHub Pages
 
 #### Stretch Goals
 Use multiple APIs to combine different data sources. ✅ 
-Add local storage to save user preferences or favorites. ✅ 
+
+Add local storage to save user preferences or favorites. ✅
+
 Implement search filters or pagination. ✅ 
+
 Include animations or transitions for polished interactivity. ✅ 
+
 Add a loading state or error message for better UX. ✅ 
+
+### Ideal end result: 
+
+![Application Design](assets/images/design.jpg) 
 
 ## You can find our app here: https://krhdev.github.io/Darkside_Coders_CollabApp/ 
