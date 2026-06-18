@@ -48,10 +48,12 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
             weatherData.main.temp
         );
 
-        document.getElementById("results").innerHTML = `
-            <h2>${city}</h2>
-            <p>Temperature: ${weatherData.main.temp}°C</p>
+        document.getElementById("resultclothes").innerHTML = `
             <p><strong>Recommended outfit:</strong> ${outfit}</p>
+        `;
+
+        document.getElementById("resulttemp").innerHTML = `
+            <p>Temperature: ${weatherData.main.temp}°C</p>
         `;
 
     } catch (error) {
