@@ -1,21 +1,26 @@
 # Group Project: Interactive Web Application using a 3rd Party API
 
 ## Challenge
-This is our first group project and an opportunity to use the skills you've learned over the last five weeks from Step8Up Training.
+This is our first group project and an opportunity to use the skills we've learned over the last five weeks from Step8Up Training.
 In this project, we worked in teams of three to wireframe, design, plan, and develop an interactive Web application using HTML, CSS, and JavaScript that utilises one or more 3rd Party APIs.
 
 ### Meet the team
 
-Darkside Coders consists of 
+Darkside Coders consists of:
+
     Jenny - CSS & Styling 
+    
     Cherry - API 
+    
     Callum HTML and integrating api's 
+    
     Kat README & CHAT GPT API
-    The whole team getting the app proof ready. 
+    
+    The whole team is getting the app proof ready. 
 
 ### The Idea 
 
-Initially Cherry said he wanted to create a weather app, Jenny then leveled that up by saying we should be able to generate a outfit based on the weather. 
+Initially, Cherry said he wanted to create a weather app. Jenny then levelled that up by saying we should be able to generate an outfit based on the weather. 
 
 ![The Idea](assets/images/idea.jpg) 
 
