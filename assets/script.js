@@ -1,8 +1,6 @@
 
 const WEATHER_API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
 
-const WEATHER_API_KEY = "YOUR_OPENWEATHER_API_KEY";
-
 console.log("script.js loaded");
 
 function getRecommendations(weather, temp) {
