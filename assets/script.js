@@ -1,4 +1,3 @@
-
 const WEATHER_API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
 
 console.log("script.js loaded");
@@ -50,11 +49,12 @@ async function getWeather(city) {
 }
 
 async function searchWeather() {
-
     console.log("Search button clicked");
 
     const city = document.getElementById("searchInput").value.trim();
-    const results = document.getElementById("results");
+    const resultTemp = document.getElementById("resulttemp");
+    const resultClothes = document.getElementById("resultclothes");
+    const resultAccessories = document.getElementById("resultaccessories");
 
     if (!city) {
         alert("Please enter a city");
@@ -62,52 +62,29 @@ async function searchWeather() {
     }
 
     try {
-
-        results.innerHTML = "<p>Loading...</p>";
+        resultTemp.innerHTML = "<p>Loading...</p>";
+        resultClothes.innerHTML = "";
+        resultAccessories.innerHTML = "";
 
         const weatherData = await getWeather(city);
-
         const recommendation = getRecommendations(
             weatherData.weather[0].main,
             weatherData.main.temp
         );
 
-        results.innerHTML = `
-            <h2>${weatherData.name}</h2>
+        resultTemp.innerHTML = `${Math.round(weatherData.main.temp)}°C — ${weatherData.weather[0].description}`;
 
-            <p>
-                <strong>Weather:</strong>
-                ${weatherData.weather[0].description}
-            </p>
+        resultClothes.innerHTML = recommendation.outfit;
 
-            <p>
-                <strong>Temperature:</strong>
-                ${Math.round(weatherData.main.temp)}°C
-            </p>
-
-            <h3>What to Wear</h3>
-            <p>${recommendation.outfit}</p>
-
-            <h3>Don't Forget</h3>
-
-            <ul>
-                ${
-                    recommendation.dontForget.length
-                        ? recommendation.dontForget
-                            .map(item => `<li>${item}</li>`)
-                            .join("")
-                        : "<li>Nothing special needed today.</li>"
-                }
-            </ul>
-        `;
+        resultAccessories.innerHTML = recommendation.dontForget.length
+            ? recommendation.dontForget.map(item => `<li>${item}</li>`).join("")
+            : "Nothing special needed today.";
 
     } catch (error) {
-
         console.error(error);
-
-        results.innerHTML = `
-            <p>Error: ${error.message}</p>
-        `;
+        resultTemp.innerHTML = `<p>Error: ${error.message}</p>`;
+        resultClothes.innerHTML = "";
+        resultAccessories.innerHTML = "";
     }
 }
 
