@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Wear</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+     <header>
+        <div class="logo-title">
+        <img src="weatherWearLogo.png" alt="Weather Wear">
+        </div>
+    </header>
+
+    <section class="logo-slogan">
+    <h2>What shall I wear today?</h2>
+</section>
+
+    <section>
+      <div class="search-row">
+      <input id="searchInput" type="text" placeholder= "📍Enter a city..." maxlength="60">
+      <button class="btn btn-geo" id="geoBtn" title="Use my location">⌖</button>
+      <button class="btn btn-primary" id="searchBtn">Search</button>
+     </div>
+   </section>
+
+    <section>
+      <div class="output">
+        <strong> Feels like </strong>
+       <button class="btn btn-c" data-unit="metric"="true">°C</button>
+       <button class="btn btn-f" data-unit="imperial"="false">°F</button>
+        
+      </div>
+
+      <div class="output">
+        <strong>What to wear</strong>
+      </div>
+
+      <div class="output">
+        <strong>Don't forget</strong>
+      </div>
+    </section>
+    
+
+  
+
+
+</body>
+<script src="script.js"
+<script src="./assets/js/chatgpt.js"></script>
+</html>
