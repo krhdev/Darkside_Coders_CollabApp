@@ -1,23 +1,24 @@
 
 const WEATHER_API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
 
-function getRecommendations(weather, temp) {
+const WEATHER_API_KEY = "YOUR_OPENWEATHER_API_KEY";
 
+console.log("script.js loaded");
+
+function getRecommendations(weather, temp) {
     let outfit = "";
-    let dontForget = [];
+    const dontForget = [];
 
     if (temp < 5) {
         outfit = "Heavy coat, gloves, scarf and boots.";
-        dontForget.push("🧤 Gloves");
-        dontForget.push("🧣 Scarf");
+        dontForget.push("🧤 Gloves", "🧣 Scarf");
     } else if (temp < 12) {
         outfit = "Jacket, jeans and trainers.";
     } else if (temp < 20) {
         outfit = "Light jumper and trousers.";
     } else {
         outfit = "T-shirt, shorts and sunglasses.";
-        dontForget.push("🕶️ Sunglasses");
-        dontForget.push("🧴 Sun Cream");
+        dontForget.push("🕶️ Sunglasses", "🧴 Sun Cream");
     }
 
     const condition = weather.toLowerCase();
@@ -32,50 +33,37 @@ function getRecommendations(weather, temp) {
 
     if (condition.includes("snow")) {
         dontForget.push("🥾 Winter Boots");
-        dontForget.push("🧤 Gloves");
     }
 
-    if (
-        condition.includes("thunderstorm") ||
-        condition.includes("storm")
-    ) {
-        dontForget.push("⚡ Waterproof Jacket");
-    }
-
-    return {
-        outfit,
-        dontForget
-    };
+    return { outfit, dontForget };
 }
 
 async function getWeather(city) {
-
     const url =
         `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${WEATHER_API_KEY}&units=metric`;
 
     const response = await fetch(url);
 
     if (!response.ok) {
-        throw new Error(`Weather API returned ${response.status}`);
+        throw new Error(`Weather API Error (${response.status})`);
     }
 
-    return await response.json();
+    return response.json();
 }
 
 async function searchWeather() {
 
+    console.log("Search button clicked");
+
     const city = document.getElementById("searchInput").value.trim();
+    const results = document.getElementById("results");
 
     if (!city) {
         alert("Please enter a city");
         return;
     }
 
-    const results = document.getElementById("results");
-
     try {
-
-        console.log("Searching:", city);
 
         results.innerHTML = "<p>Loading...</p>";
 
@@ -127,14 +115,22 @@ async function searchWeather() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("Weather Wear loaded");
-
     const searchBtn = document.getElementById("searchBtn");
     const searchInput = document.getElementById("searchInput");
 
+    if (!searchBtn) {
+        console.error("searchBtn not found");
+        return;
+    }
+
+    if (!searchInput) {
+        console.error("searchInput not found");
+        return;
+    }
+
     searchBtn.addEventListener("click", searchWeather);
 
-    searchInput.addEventListener("keydown", (event) => {
+    searchInput.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
             searchWeather();
         }
