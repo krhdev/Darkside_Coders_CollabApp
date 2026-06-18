@@ -6,16 +6,21 @@ In this project, we worked in teams of three to wireframe, design, plan, and dev
 
 ### Meet the team
 
-Darkside Coders consists of 
+Darkside Coders consists of:
+
     Jenny - CSS & Styling 
+    
     Cherry - API 
+    
     Callum HTML and integrating api's 
+    
     Kat README & CHAT GPT API
-    The whole team getting the app proof ready. 
+    
+    The whole team is getting the app proof ready. 
 
 ### The Idea 
 
-Initially Cherry said he wanted to create a weather app, Jenny then leveled that up by saying we should be able to generate a outfit based on the weather. 
+Initially, Cherry said he wanted to create a weather app. Jenny then levelled that up by saying we should be able to generate an outfit based on the weather. 
 
 ![The Idea](assets/images/idea.jpg) 
 
