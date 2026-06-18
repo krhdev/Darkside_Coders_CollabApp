@@ -4,32 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Wear</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
      <header>
-        <h1>Weather Wear</h1>
-        <button class="unit-btn active" data-unit="metric"="true">°C</button>
-      <button class="unit-btn" data-unit="imperial"="false">°F</button>
+        <div class="logo-title">
+        <img src="weatherWearLogo.png" alt="Weather Wear">
+        </div>
     </header>
 
-    <section>
-        <p> What shall I wear today?1</p>
-    </section>
+    <section class="logo-slogan">
+    <h2>What shall I wear today?</h2>
+</section>
 
-    
-    <div class="search-row">
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="City name (e.g. London, Tokyo, New York)"
-        maxlength="60"
-      />
+    <section>
+      <div class="search-row">
+      <input id="searchInput" type="text" placeholder= "📍Enter a city..." maxlength="60">
       <button class="btn btn-geo" id="geoBtn" title="Use my location">⌖</button>
       <button class="btn btn-primary" id="searchBtn">Search</button>
-    </div>
+     </div>
+   </section>
+
+    <section>
+      <div class="output">
+        <strong> Feels like </strong>
+       <button class="btn btn-c" data-unit="metric"="true">°C</button>
+       <button class="btn btn-f" data-unit="imperial"="false">°F</button>
+        
+      </div>
+
+      <div class="output">
+        <strong>What to wear</strong>
+      </div>
+
+      <div class="output">
+        <strong>Don't forget</strong>
+      </div>
+    </section>
     
+
   
 
 
