@@ -1,6 +1,5 @@
 const WEATHER_API_BASE_URL = 'https://api.openweathermap.org';
 const WEATHER_API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
-const MAX_DAILY_FORECAST = 5;
 
 function getRecommendations(weather, temp) {
 
@@ -24,25 +23,24 @@ function getRecommendations(weather, temp) {
         dontForget.push("🧴 Sun Cream");
     }
 
-    const weatherCondition = weather.toLowerCase();
+    const condition = weather.toLowerCase();
 
     if (
-        weatherCondition.includes("rain") ||
-        weatherCondition.includes("drizzle") ||
-        weatherCondition.includes("shower")
+        condition.includes("rain") ||
+        condition.includes("drizzle") ||
+        condition.includes("shower")
     ) {
         dontForget.push("☂️ Umbrella");
     }
 
-    if (
-        weatherCondition.includes("snow")
-    ) {
+    if (condition.includes("snow")) {
         dontForget.push("🥾 Winter Boots");
         dontForget.push("🧤 Gloves");
     }
 
     if (
-        weatherCondition.includes("wind")
+        condition.includes("wind") ||
+        condition.includes("storm")
     ) {
         dontForget.push("🧥 Windproof Jacket");
     }
@@ -56,7 +54,7 @@ function getRecommendations(weather, temp) {
 async function getWeather(city) {
 
     const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${WEATHER_API_KEY}&units=metric`
     );
 
     if (!response.ok) {
@@ -66,41 +64,68 @@ async function getWeather(city) {
     return await response.json();
 }
 
-document.getElementById("searchBtn").addEventListener("click", async () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const city = document.getElementById("searchInput").value.trim();
+    const searchBtn = document.getElementById("searchBtn");
 
-    if (!city) {
-        alert("Please enter a city");
-        return;
-    }
+    searchBtn.addEventListener("click", async () => {
 
-    try {
+        const city = document.getElementById("searchInput").value.trim();
 
-        const weatherData = await getWeather(city);
+        if (!city) {
+            alert("Please enter a city");
+            return;
+        }
 
-        const recommendation = getRecommendations(
-            weatherData.weather[0].main,
-            weatherData.main.temp
-        );
+        try {
 
-        document.getElementById("results").innerHTML = `
-            <h2>${city}</h2>
-            <p>Temperature: ${weatherData.main.temp}°C</p>
-            <p><strong>Recommended outfit:</strong> ${outfit}</p>
-        `;
+            const weatherData = await getWeather(city);
 
-        document.getElementById("resulttemp").innerHTML = `
-            <p>Temperature: ${weatherData.main.temp}°C</p>
-        `;
+            const recommendation = getRecommendations(
+                weatherData.weather[0].main,
+                weatherData.main.temp
+            );
 
-    } catch (error) {
+            const results = document.getElementById("results");
 
-        console.error(error);
+            results.innerHTML = `
+                <h2>${weatherData.name}</h2>
 
-        document.getElementById("results").innerHTML = `
-            <p>Error: ${error.message}</p>
-        `;
-    }
+                <p>
+                    <strong>Weather:</strong>
+                    ${weatherData.weather[0].description}
+                </p>
+
+                <p>
+                    <strong>Temperature:</strong>
+                    ${Math.round(weatherData.main.temp)}°C
+                </p>
+
+                <h3>What to Wear</h3>
+                <p>${recommendation.outfit}</p>
+
+                <h3>Don't Forget</h3>
+
+                <ul>
+                    ${
+                        recommendation.dontForget.length
+                            ? recommendation.dontForget
+                                .map(item => `<li>${item}</li>`)
+                                .join("")
+                            : "<li>Nothing special needed today.</li>"
+                    }
+                </ul>
+            `;
+
+        } catch (error) {
+
+            console.error(error);
+
+            document.getElementById("results").innerHTML = `
+                <p>Error: ${error.message}</p>
+            `;
+        }
+
+    });
 
 });
