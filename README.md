@@ -1,6 +1,5 @@
 # Group Project: Interactive Web Application using a 3rd Party API
 
-
 ## Challenge
 This is our first group project and an opportunity to use the skills you've learned over the last five weeks from Step8Up Training.
 In this project, we worked in teams of three to wireframe, design, plan, and develop an interactive Web application using HTML, CSS, and JavaScript that utilises one or more 3rd Party APIs.
@@ -9,11 +8,19 @@ In this project, we worked in teams of three to wireframe, design, plan, and dev
 
 Darkside Coders consists of Jenny, Cherry, Callum & Kat!
 
+### The Idea 
+
+Initially Cherry said he wanted to create a weather app, Jenny then leveled that up by saying we should be able to generate a outfit based on the weather. 
+
+![The Idea](assets/images/idea.jpg) 
+
 ### Purpose 
 
 To figure out what to wear based on the weather where you will be. 
 
 ### Features 
+
+![WeatherWear Logo](assets/images/weatherWearLogo.png) 
 
 Amazing logo created by Jetsetter Jennie 
 
@@ -43,10 +50,10 @@ Be deployed on GitHub Pages
  The team presents the project, explaining their API choice, data flow, and technical challenges.
 
 #### Stretch Goals
-Use multiple APIs to combine different data sources.
-Add local storage to save user preferences or favorites.
-Implement search filters or pagination.
-Include animations or transitions for polished interactivity.
-Add a loading state or error message for better UX.
+Use multiple APIs to combine different data sources. ✅ 
+Add local storage to save user preferences or favorites. ✅ 
+Implement search filters or pagination. ✅ 
+Include animations or transitions for polished interactivity. ✅ 
+Add a loading state or error message for better UX. ✅ 
 
 ## You can find our app here: https://krhdev.github.io/Darkside_Coders_CollabApp/ 
