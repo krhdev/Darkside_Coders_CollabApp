@@ -6,7 +6,12 @@ In this project, we worked in teams of three to wireframe, design, plan, and dev
 
 ### Meet the team
 
-Darkside Coders consists of Jenny, Cherry, Callum & Kat!
+Darkside Coders consists of 
+    Jenny - CSS & Styling 
+    Cherry - API 
+    Callum HTML and integrating api's 
+    Kat README & CHAT GPT API
+    The whole team getting the app proof ready. 
 
 ### The Idea 
 
@@ -64,4 +69,4 @@ Add a loading state or error message for better UX. ✅
 
 ![Application Design](assets/images/design.jpg) 
 
-## You can find our app here: https://krhdev.github.io/Darkside_Coders_CollabApp/ 
+## You can find our app here: https://krhdev.github.io/Darkside_Coders_CollabApp/  
