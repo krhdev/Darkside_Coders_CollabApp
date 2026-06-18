@@ -102,6 +102,7 @@ body {
 
 .btn-c,
 .btn-f {
+    display: none;
   width: 70px;
   height: 55px;
   border: none;
